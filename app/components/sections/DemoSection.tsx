@@ -1,36 +1,76 @@
 'use client';
 
-import { useState } from 'react';
-
-export default function DemoSection() {
-  const [isPlaying, setIsPlaying] = useState(false);
+export default function HowItWorksSection() {
+  const steps = [
+    {
+      number: '01',
+      title: 'Chat with AI',
+      icon: 'chat',
+      description: 'Send a message on Telegram or Zalo. Our AI understands natural language booking requests.',
+    },
+    {
+      number: '02',
+      title: 'AI Processes & Optimizes',
+      icon: 'psychology',
+      description: 'The AI agent finds the optimal time slot, checks availability, and handles scheduling conflicts.',
+    },
+    {
+      number: '03',
+      title: 'Booking Confirmed',
+      icon: 'check_circle',
+      description: 'Instant confirmation with all details. Reminders sent automatically before your appointment.',
+    },
+  ];
 
   return (
-    <section className="bg-surface-container-low py-28 md:py-36 px-6 md:px-8" id="demo">
-      <div className="max-w-5xl mx-auto text-center space-y-4 mb-16">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">
-          Experience the AI Magic
-        </h2>
-        <p className="text-on-surface-variant text-base md:text-lg">
-          Watch how MobiClear handles a complex booking request in seconds.
-        </p>
-      </div>
+    <section className="bg-surface-container-low py-24 md:py-32 px-6 md:px-8" id="demo">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center space-y-4 mb-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">
+            How It Works
+          </h2>
+          <p className="text-on-surface-variant text-base md:text-lg max-w-2xl mx-auto">
+            Three simple steps from chat message to confirmed booking. No forms, no delays.
+          </p>
+        </div>
 
-      {/* Video Placeholder */}
-      <div className="max-w-4xl mx-auto aspect-video bg-surface-container-lowest rounded-3xl overflow-hidden ambient-shadow flex items-center justify-center relative group">
-        {/* Placeholder Background */}
-        <div className="absolute inset-0 w-full h-full bg-surface-container-lowest flex items-center justify-center" />
+        {/* Steps Container */}
+        <div className="relative">
+          {/* Desktop Connector Line */}
+          <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-surface-container via-primary to-surface-container pointer-events-none" />
 
-        {/* Play Button Overlay */}
-        <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="relative z-10 w-20 h-20 signature-gradient rounded-full flex items-center justify-center text-on-primary ambient-shadow scale-100 group-hover:scale-105 transition-transform duration-300"
-          aria-label="Play video"
-        >
-          <span className="material-symbols-outlined text-4xl ml-1" style={{ fontVariationSettings: "'FILL' 1" }}>
-            play_arrow
-          </span>
-        </button>
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+            {steps.map((step, idx) => (
+              <div key={step.number} className="relative flex flex-col items-center md:items-center text-center">
+                {/* Step Number & Icon Container */}
+                <div className="relative z-10 mb-6 flex flex-col items-center">
+                  {/* Circle Background */}
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/30 mb-4">
+                    <span className="material-symbols-outlined text-5xl text-primary">
+                      {step.icon}
+                    </span>
+                  </div>
+                  {/* Step Number */}
+                  <div className="text-sm font-bold text-primary tracking-wider uppercase">
+                    {step.number}
+                  </div>
+                </div>
+
+                {/* Content Card */}
+                <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 space-y-3 flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-on-surface font-headline">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

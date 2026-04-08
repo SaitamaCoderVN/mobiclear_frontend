@@ -4,13 +4,13 @@ export default function AIAgentSection() {
   const features = [
     {
       icon: 'schedule',
-      title: '24/7 Availability',
-      description: 'Your business never sleeps. AI handles bookings and inquiries at any hour, instantly.',
+      title: 'Always On',
+      description: 'Handles 1,000+ concurrent booking requests across Telegram, Zalo, and Viber simultaneously.',
     },
     {
       icon: 'hub',
-      title: 'Seamless Management',
-      description: 'Automatic resource allocation and queue management integrated into your existing workflow.',
+      title: 'Zero-Touch Operations',
+      description: 'Automatic queue optimization, resource allocation, and conflict resolution—no human intervention needed.',
     },
   ];
 
@@ -18,24 +18,28 @@ export default function AIAgentSection() {
     {
       icon: 'analytics',
       title: 'Real-time Data',
+      subtitle: 'Live dashboard with booking analytics',
       colorClass: 'bg-surface-container-lowest',
       iconColor: 'text-tertiary-container',
     },
     {
       icon: 'bolt',
       title: 'Instant Scaling',
+      subtitle: 'Auto-scales to meet demand spikes',
       colorClass: 'bg-primary text-on-primary',
       iconColor: 'text-on-primary',
     },
     {
       icon: 'settings_suggest',
       title: 'Auto-Optimize',
+      subtitle: 'AI learns and improves continuously',
       colorClass: 'bg-surface-container-high',
       iconColor: 'text-on-surface-variant',
     },
     {
       icon: 'smart_toy',
       title: 'Self Learning',
+      subtitle: 'Gets smarter with every interaction',
       colorClass: 'bg-surface-container-lowest',
       iconColor: 'text-primary',
     },
@@ -83,8 +87,11 @@ export default function AIAgentSection() {
                 <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
                   {card.icon}
                 </span>
-                <div className={`font-bold font-headline ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
+                <div className={`font-bold font-headline mb-2 ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
                   {card.title}
+                </div>
+                <div className={`text-xs leading-relaxed ${card.colorClass.includes('text-on-primary') ? 'text-on-primary/90' : 'text-on-surface-variant'}`}>
+                  {card.subtitle}
                 </div>
               </div>
             ))}
@@ -100,8 +107,11 @@ export default function AIAgentSection() {
                 <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
                   {card.icon}
                 </span>
-                <div className={`font-bold font-headline ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
+                <div className={`font-bold font-headline mb-2 ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
                   {card.title}
+                </div>
+                <div className={`text-xs leading-relaxed ${card.colorClass.includes('text-on-primary') ? 'text-on-primary/90' : 'text-on-surface-variant'}`}>
+                  {card.subtitle}
                 </div>
               </div>
             ))}

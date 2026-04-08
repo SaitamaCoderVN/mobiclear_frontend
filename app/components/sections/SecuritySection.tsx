@@ -29,10 +29,10 @@ export default function SecuritySection() {
         {/* Left Column - Security Features */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Secure AI Agentic Layer
+            Enterprise-Grade Infrastructure
           </h2>
           <p className="text-inverse-on-surface/80 text-base md:text-lg leading-relaxed">
-            We prioritize your data like it's our own. Every interaction is encrypted, and every decision is audited.
+            Every booking request is encrypted end-to-end. Our infrastructure runs on enterprise-grade cloud with redundant failover across multiple availability zones.
           </p>
 
           {/* Security Features List */}
@@ -59,11 +59,11 @@ export default function SecuritySection() {
           </div>
 
           {/* Heading */}
-          <h3 className="text-2xl md:text-3xl font-bold">Military-Grade Reliability</h3>
+          <h3 className="text-2xl md:text-3xl font-bold">99.99% Uptime SLA</h3>
 
           {/* Description */}
           <p className="text-inverse-on-surface/80 text-sm md:text-base leading-relaxed">
-            Our infrastructure is designed for 99.99% uptime, ensuring your customers can always book, regardless of traffic spikes.
+            Ensuring your customers can always book, regardless of traffic spikes or demand surges.
           </p>
 
           {/* Tech Badges */}
@@ -73,6 +73,13 @@ export default function SecuritySection() {
                 {badge}
               </div>
             ))}
+          </div>
+
+          {/* Compliance Note */}
+          <div className="pt-4 border-t border-white/10">
+            <p className="text-xs text-inverse-on-surface/70">
+              Independently audited. SOC 2 Type II compliant.
+            </p>
           </div>
         </div>
       </div>
