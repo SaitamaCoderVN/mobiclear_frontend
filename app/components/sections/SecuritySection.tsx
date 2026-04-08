@@ -29,10 +29,10 @@ export default function SecuritySection() {
         {/* Left Column - Security Features */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Bank-Level Security. Always Online.
+            Your Customers&apos; Data Is Locked Down. Your Bookings Never Go Offline.
           </h2>
           <p className="text-inverse-on-surface/80 text-base md:text-lg leading-relaxed">
-            Every booking is encrypted end-to-end with enterprise-grade infrastructure and redundant failover across availability zones.
+            Phone numbers, booking history, personal info—all encrypted end-to-end. And your system stays live 24/7, even during traffic spikes and peak Saturday mornings.
           </p>
 
           {/* Security Features List */}

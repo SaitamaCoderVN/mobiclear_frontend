@@ -46,14 +46,23 @@ const faqs: FAQItem[] = [
     answer:
       'Yes, on our Pro and Enterprise plans. Each location gets its own AI agent and booking calendar, but you see everything in one centralized dashboard. Real-time analytics across all locations, unified customer database, and the AI learns patterns across your entire network to optimize scheduling.',
   },
+  {
+    id: 'worth-it',
+    question: 'Is MobiClear worth it for a small car wash?',
+    answer:
+      'The Starter plan is free forever—up to 100 bookings/month with no strings attached. Most small operators recover the Pro plan cost ($99/month) within 2-3 weeks through fewer missed bookings and higher slot utilization. One District 2 partner told us they added 35 extra bookings in the first month just from AI-filled cancellation gaps. Zero risk to try.',
+  },
 ];
 
 export default function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleOpen = (id: string) => {
     setOpenId(openId === id ? null : id);
   };
+
+  const visibleFaqs = showAll ? faqs : faqs.slice(0, 3);
 
   return (
     <section
@@ -73,7 +82,7 @@ export default function FAQSection() {
 
         {/* FAQ Items */}
         <div className="space-y-3">
-          {faqs.map((faq) => (
+          {visibleFaqs.map((faq) => (
             <div
               key={faq.id}
               className="bg-surface-container-lowest rounded-2xl overflow-hidden transition-all duration-300"
@@ -105,6 +114,19 @@ export default function FAQSection() {
             </div>
           ))}
         </div>
+
+        {/* Show More */}
+        {!showAll && faqs.length > 3 && (
+          <div className="text-center">
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline transition-colors"
+            >
+              <span className="material-symbols-outlined text-base">expand_more</span>
+              Show {faqs.length - 3} more questions
+            </button>
+          </div>
+        )}
 
         {/* CTA */}
         <div className="text-center pt-4">

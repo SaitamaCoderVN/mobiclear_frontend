@@ -55,10 +55,10 @@ export default function PricingCTASection() {
         {/* Heading */}
         <div className="text-center space-y-6 max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline text-on-surface tracking-tight">
-            Plans That Scale With You
+            Start Free. Grow Your Bookings. Pay When You&apos;re Ready.
           </h2>
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-            Start free. Upgrade when ready.
+            Most partners see ROI within their first week. Zero risk to try.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function PricingCTASection() {
               className={`relative rounded-3xl p-8 md:p-10 flex flex-col gap-8 transition-all duration-300 ${
                 plan.highlighted
                   ? 'bg-primary text-on-primary md:scale-105 ambient-shadow-lg'
-                  : 'bg-surface-container-lowest border border-surface-container text-on-surface'
+                  : 'bg-surface-container-lowest ambient-shadow text-on-surface'
               }`}
             >
               {/* Badge */}

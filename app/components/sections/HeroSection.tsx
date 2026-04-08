@@ -22,7 +22,7 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-semibold">
           <span className="material-symbols-outlined mr-2 text-base">auto_awesome</span>
-          Next-Gen Booking Automation
+          Built for Vietnam&apos;s Car Wash Industry
         </div>
 
         {/* Headline */}
@@ -30,25 +30,24 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-on-surface leading-[1.1] font-headline"
           style={{ letterSpacing: '-0.03em' }}
         >
-          Stop Losing Bookings. Let <span className="text-primary">AI</span> Handle It.
+          Your <span className="text-primary">AI Manager</span> That Fills Every Slot.
         </h1>
 
         {/* Subtitle */}
         <p className="text-base md:text-lg text-on-surface-variant leading-snug max-w-xl">
-          Your car wash&apos;s AI manager that handles 100% of booking chaos.
-          Instant confirmations, zero double-bookings, and customers who book 3x faster.
+          Your car wash&apos;s AI manager that fills every slot, confirms every booking in under 10 seconds, and never double-books again.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button className="signature-gradient text-on-primary flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95">
+          <a href="#pricing-cta" className="signature-gradient text-on-primary flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95">
+            <span className="material-symbols-outlined">rocket_launch</span>
+            Start Free — Live in 24 Hours
+          </a>
+          <a href="#demo" className="bg-surface-container-high text-on-surface flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95">
             <span className="material-symbols-outlined">play_arrow</span>
-            Watch Demo
-          </button>
-          <button className="bg-surface-container-high text-on-surface flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95">
-            <span className="material-symbols-outlined">mail</span>
-            Get Early Access
-          </button>
+            See How It Works
+          </a>
         </div>
 
         {/* Trust Metric */}
@@ -57,7 +56,7 @@ export default function HeroSection() {
             check_circle
           </span>
           <p className="text-sm font-medium text-on-surface-variant">
-            Trusted by 50+ car wash operators in Vietnam
+            Live on Zalo &amp; Telegram across 10+ Vietnamese cities
           </p>
         </div>
       </div>

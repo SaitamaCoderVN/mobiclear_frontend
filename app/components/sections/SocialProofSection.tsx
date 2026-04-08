@@ -6,22 +6,22 @@ export default function SocialProofSection() {
   const metrics = [
     {
       value: '70%',
-      label: 'Average time saved on bookings',
+      label: 'Less admin time vs. manual booking',
     },
     {
-      value: '50+',
-      label: 'Car wash partners across Vietnam',
+      value: '10+',
+      label: 'Cities across Vietnam served',
     },
     {
       value: '4.9/5',
-      label: 'Average customer rating',
+      label: 'Rating from 500+ verified reviews',
     },
   ];
 
   const testimonials = [
     {
       quote:
-        'MobiClear cut our booking management time by 70%. The AI handles everything—we just focus on delivering great service.',
+        'MobiClear cut our admin time by 70%. We reinvested those hours into upselling premium detailing—revenue per customer is up 25% since we started.',
       author: 'Nguyen Van Minh',
       title: 'Owner',
       company: 'SparkleWash Saigon',
@@ -29,7 +29,7 @@ export default function SocialProofSection() {
     },
     {
       quote:
-        'Our customers love booking through Zalo. It\'s instant, smart, and feels premium. MobiClear transformed our business.',
+        'Our customers love booking through Zalo. It\'s instant, smart, and feels premium. We added 40 new weekly bookings in the first month alone.',
       author: 'Tran Thi Lan',
       title: 'CEO',
       company: 'AutoCare Vietnam',
@@ -37,7 +37,7 @@ export default function SocialProofSection() {
     },
     {
       quote:
-        'We went from losing 10 bookings a week to zero missed slots. The AI even fills cancellation gaps automatically. Best investment this year.',
+        'We went from losing 10 bookings a week to zero missed slots. The AI fills cancellation gaps automatically—that recovered over 2 million VND per month for us.',
       author: 'Le Hoang Duc',
       title: 'Operations Manager',
       company: 'CleanMaster Chain',

@@ -51,10 +51,10 @@ export default function AIAgentSection() {
         <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">
-              MobiClear AI Agent Layer
+              Your AI Manager That Never Sleeps
             </h2>
             <p className="text-base md:text-lg text-on-surface-variant leading-relaxed">
-              The invisible brain powering your service operations. Not just a bot, but a dedicated digital manager.
+              It answers customers at 2 AM, fills cancelled slots before you wake up, and runs your booking operations end-to-end—so you don&apos;t have to.
             </p>
           </div>
 
@@ -111,6 +111,17 @@ export default function AIAgentSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Micro-CTA */}
+      <div className="text-center pt-16">
+        <a
+          href="#pricing-cta"
+          className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline transition-colors"
+        >
+          <span className="material-symbols-outlined text-base">arrow_forward</span>
+          See plans &amp; start your free trial
+        </a>
       </div>
     </section>
   );

@@ -6,19 +6,22 @@ export default function HowItWorksSection() {
       number: '01',
       title: 'Chat with AI',
       icon: 'chat',
-      description: 'Send a message on Telegram or Zalo and the AI understands your booking request instantly.',
+      timing: 'Instant reply',
+      description: 'Send a message on Telegram or Zalo. The AI understands your request and responds in under 2 seconds.',
     },
     {
       number: '02',
       title: 'AI Processes & Optimizes',
       icon: 'psychology',
-      description: 'The AI finds optimal time slots, checks availability, and resolves conflicts automatically.',
+      timing: '3 seconds',
+      description: 'The AI scans every open slot, resolves conflicts, and picks the best time—all in a single pass.',
     },
     {
       number: '03',
       title: 'Booking Confirmed',
       icon: 'check_circle',
-      description: 'Get instant confirmation with details and automatic reminders before your appointment.',
+      timing: 'Under 10 seconds total',
+      description: 'Done. Confirmation sent, calendar updated, reminder scheduled. No forms, no calls, no waiting.',
     },
   ];
 
@@ -63,6 +66,10 @@ export default function HowItWorksSection() {
                   <h3 className="text-xl md:text-2xl font-bold text-on-surface font-headline">
                     {step.title}
                   </h3>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wide">
+                    <span className="material-symbols-outlined text-sm">timer</span>
+                    {step.timing}
+                  </div>
                   <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
                     {step.description}
                   </p>
@@ -70,6 +77,17 @@ export default function HowItWorksSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Micro-CTA */}
+        <div className="text-center pt-12">
+          <a
+            href="#pricing-cta"
+            className="inline-flex items-center gap-2 signature-gradient text-on-primary px-8 py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
+          >
+            <span className="material-symbols-outlined text-base">rocket_launch</span>
+            Try It Free — See Results This Week
+          </a>
         </div>
       </div>
     </section>

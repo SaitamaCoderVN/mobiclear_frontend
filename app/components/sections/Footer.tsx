@@ -28,10 +28,10 @@ export default function Footer() {
             {/* Left - Text */}
             <div className="space-y-3">
               <h3 className="text-2xl md:text-3xl font-bold text-on-surface font-headline">
-                Join the Automation Movement
+                Get Smarter About Bookings
               </h3>
               <p className="text-on-surface-variant text-base">
-                Weekly tips, product updates, and car wash industry insights.
+                Weekly tips, AI updates, and insights from Vietnam&apos;s top car wash operators.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         {/* Links & Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 pt-8 border-t border-surface-container">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 pt-8">
           <div className="flex items-center gap-6">
             {/* Logo */}
             <div className="text-lg font-bold text-on-surface font-headline">MobiClear</div>
