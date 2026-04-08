@@ -29,7 +29,7 @@ export function MaterialIcon({
 }: MaterialIconProps) {
   return (
     <span
-      className={`material-symbols-rounded inline-flex items-center justify-center ${sizeMap[size]} ${className}`}
+      className={`material-symbols-outlined inline-flex items-center justify-center ${sizeMap[size]} ${className}`}
       style={{
         fontVariationSettings: filled ? "'FILL' 1" : "'FILL' 0",
       }}

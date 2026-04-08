@@ -78,12 +78,12 @@ export default function AIAgentSection() {
             {bentoCards.slice(0, 2).map((card) => (
               <div
                 key={card.title}
-                className={`${card.colorClass} p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:shadow-ambient-shadow-lg`}
+                className={`${card.colorClass} p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02]`}
               >
-                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-4 block`}>
+                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
                   {card.icon}
                 </span>
-                <div className={`font-bold ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
+                <div className={`font-bold font-headline ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
                   {card.title}
                 </div>
               </div>
@@ -95,14 +95,12 @@ export default function AIAgentSection() {
             {bentoCards.slice(2, 4).map((card) => (
               <div
                 key={card.title}
-                className={`${card.colorClass} p-8 rounded-3xl transition-all duration-300 hover:shadow-ambient-shadow-lg ${
-                  !card.colorClass.includes('surface-container-lowest') ? '' : 'ambient-shadow'
-                }`}
+                className={`${card.colorClass} p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02]`}
               >
-                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-4 block`}>
+                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
                   {card.icon}
                 </span>
-                <div className={`font-bold ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
+                <div className={`font-bold font-headline ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
                   {card.title}
                 </div>
               </div>

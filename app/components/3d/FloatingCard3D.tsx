@@ -136,10 +136,9 @@ export function FloatingCard3D({
           transform
           wrapperClass="flex items-center justify-center"
         >
-          <div
-            className="w-48 h-32 flex items-center justify-center text-center pointer-events-none"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+          <div className="w-48 h-32 flex items-center justify-center text-center pointer-events-none text-sm text-on-surface">
+            {htmlContent}
+          </div>
         </Html>
       )}
 

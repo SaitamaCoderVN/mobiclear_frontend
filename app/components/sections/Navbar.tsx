@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass border-b border-outline-variant/20">
+    <nav className="fixed top-0 w-full z-50 glass ambient-shadow">
       <div className="flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="text-2xl font-black text-on-surface font-headline tracking-tight">
@@ -35,7 +35,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <button className="hidden md:block signature-gradient text-on-primary px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-ambient-shadow active:scale-95">
+        <button className="hidden md:block signature-gradient text-on-primary px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95">
           Get Started
         </button>
 
@@ -53,7 +53,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-outline-variant/20 bg-surface p-6">
+        <div className="md:hidden bg-surface-container-low p-6">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <button className="signature-gradient text-on-primary w-full px-6 py-3 rounded-xl font-bold text-sm tracking-wide uppercase transition-all hover:shadow-ambient-shadow mt-2">
+            <button className="signature-gradient text-on-primary w-full px-6 py-3 rounded-xl font-bold text-sm tracking-wide uppercase transition-all hover:shadow-lg mt-2">
               Get Started
             </button>
           </div>

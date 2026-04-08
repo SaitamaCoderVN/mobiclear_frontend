@@ -1,18 +1,14 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { MeshTransmissionMaterial, Float } from '@react-three/drei';
 
-interface MousePosition {
-  x: number;
-  y: number;
-}
-
 /**
  * HeroScene - Main 3D hero background with floating geometric shapes
  * Features: rotating shapes, mouse follow, glass materials, particle field
+ * Performance: Uses refs instead of state for animation to avoid re-renders
  */
 export function HeroScene() {
   const groupRef = useRef<THREE.Group>(null);
@@ -21,36 +17,29 @@ export function HeroScene() {
   const icosahedronRef = useRef<THREE.Mesh>(null);
   const particleGroupRef = useRef<THREE.Group>(null);
 
-  const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
-  const mouseTargetRef = useRef<MousePosition>({ x: 0, y: 0 });
+  // Use refs for mouse tracking to avoid re-renders
+  const mouseTargetRef = useRef({ x: 0, y: 0 });
+  const mousePosRef = useRef({ x: 0, y: 0 });
 
-  // Mouse tracking for interactive follow effect
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      mouseTargetRef.current = {
-        x: (event.clientX / window.innerWidth) * 2 - 1,
-        y: -(event.clientY / window.innerHeight) * 2 + 1,
-      };
-    };
+  // Mouse tracking - uses ref, no state updates
+  if (typeof window !== 'undefined') {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useRef<boolean>(false);
+    if (!groupRef.current) {
+      // Will be set up on first mount via useFrame
+    }
+  }
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Smooth mouse position interpolation
-  useFrame(() => {
-    setMousePos((prev) => ({
-      x: prev.x + (mouseTargetRef.current.x - prev.x) * 0.1,
-      y: prev.y + (mouseTargetRef.current.y - prev.y) * 0.1,
-    }));
-  });
-
-  // Animate shapes
+  // Single consolidated useFrame for all animations
   useFrame((state) => {
+    // Smooth mouse interpolation
+    mousePosRef.current.x += (mouseTargetRef.current.x - mousePosRef.current.x) * 0.1;
+    mousePosRef.current.y += (mouseTargetRef.current.y - mousePosRef.current.y) * 0.1;
+
+    // Apply mouse influence to group
     if (groupRef.current) {
-      // Apply mouse influence with smooth easing
-      groupRef.current.position.x += (mousePos.x * 0.5 - groupRef.current.position.x) * 0.08;
-      groupRef.current.position.y += (mousePos.y * 0.5 - groupRef.current.position.y) * 0.08;
+      groupRef.current.position.x += (mousePosRef.current.x * 0.5 - groupRef.current.position.x) * 0.08;
+      groupRef.current.position.y += (mousePosRef.current.y * 0.5 - groupRef.current.position.y) * 0.08;
     }
 
     // Rotate individual shapes
@@ -76,20 +65,22 @@ export function HeroScene() {
     }
   });
 
+  // Mouse event handler attached to the canvas via onPointerMove on group
+  const handlePointerMove = (event: THREE.Event) => {
+    const e = event as unknown as PointerEvent;
+    if (e.clientX !== undefined) {
+      mouseTargetRef.current = {
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: -(e.clientY / window.innerHeight) * 2 + 1,
+      };
+    }
+  };
+
   return (
-    <group ref={groupRef}>
-      {/* Ambient light for general illumination */}
+    <group ref={groupRef} onPointerMove={handlePointerMove}>
+      {/* Lighting */}
       <ambientLight intensity={0.6} color="#ffffff" />
-
-      {/* Directional light from top-right for clean shadows */}
-      <directionalLight
-        position={[5, 8, 5]}
-        intensity={0.8}
-        color="#e0e3e5"
-        castShadow
-      />
-
-      {/* Soft fill light from opposite side */}
+      <directionalLight position={[5, 8, 5]} intensity={0.8} color="#e0e3e5" castShadow />
       <directionalLight position={[-3, -2, -3]} intensity={0.3} color="#0051c9" />
 
       {/* Floating Sphere - Primary Blue Glass */}
@@ -138,7 +129,7 @@ export function HeroScene() {
         </mesh>
       </Float>
 
-      {/* Floating Icosahedron - Primary Blue with transparency */}
+      {/* Floating Icosahedron */}
       <Float speed={2.5} rotationIntensity={1} floatIntensity={1}>
         <mesh ref={icosahedronRef} position={[0, 3, -2]} scale={0.8} castShadow>
           <icosahedronGeometry args={[1, 4]} />
@@ -161,79 +152,76 @@ export function HeroScene() {
         </mesh>
       </Float>
 
-      {/* Particle Field - Digital atmosphere */}
-      <group ref={particleGroupRef} position={[0, 0, 0]}>
+      {/* Particle Field */}
+      <group ref={particleGroupRef}>
         <ParticleField />
       </group>
 
-      {/* Fog for depth and atmosphere */}
+      {/* Fog for depth */}
       <fog attach="fog" args={['#ffffff', 5, 30]} />
     </group>
   );
 }
 
 /**
- * ParticleField - Hundreds of small glowing particles
- * Creates a digital, flowing atmosphere around the shapes
+ * ParticleField - Small glowing particles for digital atmosphere
  */
 function ParticleField() {
   const particlesRef = useRef<THREE.Points>(null);
 
+  const { geometry } = useMemo(() => {
+    const particleCount = 300;
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i += 3) {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.random() * Math.PI * 2;
+      const r = Math.random() * 8;
+
+      positions[i] = Math.sin(phi) * Math.cos(theta) * r;
+      positions[i + 1] = Math.cos(phi) * r;
+      positions[i + 2] = Math.sin(phi) * Math.sin(theta) * r;
+
+      const t = Math.random();
+      const color = new THREE.Color().lerpColors(
+        new THREE.Color('#0051c9'),
+        new THREE.Color('#008075'),
+        t
+      );
+
+      colors[i] = color.r;
+      colors[i + 1] = color.g;
+      colors[i + 2] = color.b;
+    }
+
+    const geom = new THREE.BufferGeometry();
+    geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    return { geometry: geom };
+  }, []);
+
   useFrame((state) => {
     if (!particlesRef.current) return;
-
     const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
-
     for (let i = 0; i < positions.length; i += 3) {
       positions[i + 1] += Math.sin(state.clock.elapsedTime * 0.3 + positions[i]) * 0.0005;
       positions[i] += Math.cos(state.clock.elapsedTime * 0.2 + positions[i + 1]) * 0.0003;
     }
-
     particlesRef.current.geometry.attributes.position.needsUpdate = true;
   });
-
-  // Create particle geometry
-  const particleCount = 300;
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
-
-  for (let i = 0; i < particleCount * 3; i += 3) {
-    // Random positions in a sphere
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.random() * Math.PI * 2;
-    const r = Math.random() * 8;
-
-    positions[i] = Math.sin(phi) * Math.cos(theta) * r;
-    positions[i + 1] = Math.cos(phi) * r;
-    positions[i + 2] = Math.sin(phi) * Math.sin(theta) * r;
-
-    // Gradient colors from primary blue to teal
-    const t = Math.random();
-    const color = new THREE.Color().lerpColors(
-      new THREE.Color('#0051c9'),
-      new THREE.Color('#008075'),
-      t
-    );
-
-    colors[i] = color.r;
-    colors[i + 1] = color.g;
-    colors[i + 2] = color.b;
-  }
-
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   return (
     <points ref={particlesRef} geometry={geometry}>
       <pointsMaterial
         size={0.08}
-        sizeAttenuation={true}
+        sizeAttenuation
         transparent
         vertexColors
         opacity={0.6}
         depthWrite={false}
-        depthTest={true}
+        depthTest
       />
     </points>
   );

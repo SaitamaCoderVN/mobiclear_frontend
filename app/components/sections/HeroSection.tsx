@@ -18,7 +18,7 @@ export default function HeroSection() {
       id="hero"
     >
       {/* Left Column */}
-      <div className="flex-1 space-y-8 relative z-10">
+      <div className="flex-1 space-y-10 relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-medium">
           <span className="material-symbols-outlined mr-2 text-base">auto_awesome</span>
@@ -61,7 +61,7 @@ export default function HeroSection() {
         </div>
 
         {/* Floating Booking Confirmed Card */}
-        <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-2xl ambient-shadow flex items-center gap-4 max-w-xs border-l-4 border-primary z-10">
+        <div className="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-2xl ambient-shadow flex items-center gap-4 max-w-xs border-l-4 border-primary z-10">
           <div className="bg-tertiary-container text-on-tertiary-container p-3 rounded-full flex-shrink-0">
             <span
               className="material-symbols-outlined text-base"
