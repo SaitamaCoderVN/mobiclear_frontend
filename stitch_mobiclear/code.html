@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MobiClear | AI-Powered Car Wash Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#424656",
+                      "on-primary-container": "#f8f7ff",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "background": "#f7f9fb",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#0c56d0",
+                      "on-secondary-container": "#57657a",
+                      "inverse-primary": "#b2c5ff",
+                      "outline": "#727687",
+                      "inverse-surface": "#2d3133",
+                      "surface": "#f7f9fb",
+                      "surface-container-low": "#f2f4f6",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#d5e3fc",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "primary-fixed": "#dae2ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "on-primary-fixed": "#001848",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "surface-bright": "#f7f9fb",
+                      "on-background": "#191c1e",
+                      "tertiary-fixed": "#89f5e7",
+                      "secondary": "#515f74",
+                      "primary-container": "#316be4",
+                      "secondary-fixed": "#d5e3fc",
+                      "primary-fixed-dim": "#b2c5ff",
+                      "on-primary-fixed-variant": "#0040a2",
+                      "outline-variant": "#c2c6d8",
+                      "primary": "#0051c9",
+                      "tertiary": "#00655c",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#00201d",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eceef0",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#008075",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ddfff9",
+                      "surface-container-high": "#e6e8ea"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #0051c9 0%, #316be4 100%);
+        }
+        .ambient-shadow {
+            box-shadow: 0 12px 40px rgba(0, 81, 201, 0.06);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,81,201,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Manrope'] tracking-tight">
+<div class="text-2xl font-black text-slate-900">MobiClear</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-blue-600 font-bold border-b-2 border-blue-600 transition-colors duration-300" href="#hero">Hero</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#demo">Demo</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#ai-agent">AI Agent</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#security">Security</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#compliance">Compliance</a>
+</div>
+<button class="signature-gradient text-on-primary px-6 py-2.5 rounded-xl font-bold text-sm tracking-widest uppercase scale-95 active:scale-90 transition-transform">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-8 py-24 md:py-32 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16" id="hero">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center px-4 py-2 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-medium">
+<span class="material-symbols-outlined mr-2 text-[18px]">auto_awesome</span>
+                    Next-Gen Booking Automation
+                </div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1]">
+                    The Intelligent <span class="text-primary">Flow</span> of Car Care.
+                </h1>
+<p class="text-lg text-secondary leading-relaxed max-w-xl">
+                    MobiClear automates your car wash scheduling through AI. Seamlessly book via your favorite chat apps without lifting a finger.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="signature-gradient text-white flex items-center gap-3 px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all">
+<span class="material-symbols-outlined">send</span>
+                        Book on Telegram
+                    </button>
+<button class="bg-surface-container-high text-on-surface flex items-center gap-3 px-8 py-4 rounded-xl font-bold hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined">chat</span>
+                        Book on Zalo
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden ambient-shadow bg-surface-container-low border-[8px] border-white/50">
+<img class="w-full h-full object-cover" data-alt="luxury car being detailed inside a bright high-tech car wash bay with soft blue lighting and water droplets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAppqsCgb8c0Cgy2xu23zhrglO58_hbOkZPioyNNK6nv2e9TwKPzix8SSTQXBAGayPAilgNjNoh6tKB9ksLYQWrQaxDQ5rWAe4orYFWvMT8Q9Vm4qp6KSJYAq1PonTvDWvs4juL0WmLph9vFVnZfHZjz6RQyRwEB9Vuur0C8l1zBRoGv265Xzdo6OECD-cvk8X6XIHWuny39GFfIzLSH7aHeaDBA6GcSS7BGi6in4eaLz1kHa_7ZLHd--ze5-pR-pqqBWC3IUlLRA"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-2xl ambient-shadow flex items-center gap-4 max-w-xs border-l-4 border-primary">
+<div class="bg-tertiary-container text-on-tertiary-container p-3 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<div class="font-bold text-sm">Booking Confirmed</div>
+<div class="text-xs text-secondary">AI Agent scheduled your wash for 2:00 PM</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Demo Section -->
+<section class="bg-surface-container-low py-24 px-8" id="demo">
+<div class="max-w-5xl mx-auto text-center space-y-4 mb-16">
+<h2 class="text-4xl font-extrabold tracking-tight">Experience the AI Magic</h2>
+<p class="text-secondary">Watch how MobiClear handles a complex booking request in seconds.</p>
+</div>
+<div class="max-w-4xl mx-auto aspect-video bg-surface-container-lowest rounded-3xl overflow-hidden ambient-shadow flex items-center justify-center relative group">
+<img class="w-full h-full object-cover opacity-60" data-alt="digital interface of an AI booking dashboard showing calendar slots and customer chat windows in a clean modern layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW_25RmsHowbrxKWHySrrmMIOD796B3X4OskUbYGWDs-QLj04rvij4idFYb1GbEDXmibkmK2eX0rZTFM4Qi1ScYTcEZhnGLdWL7OrywG90_ELVYxdUXcxfzLmeW-KUzUCObftyYrOG9bO6jMSqx1WvnAvnHu6QNHtL0lpYLy6a0KQPeThmAO2sFQ5NgRF338HXIbMzn1JIuOVwLuouBg59736INlwT8CQXWF2Gm36piQw59OwnNSANc81Yg1gtnJx6AthIka2-v14"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 signature-gradient rounded-full flex items-center justify-center text-white ambient-shadow scale-100 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- AI Agent Layer Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto" id="ai-agent">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<h2 class="text-4xl font-extrabold tracking-tight">MobiClear AI Agent Layer</h2>
+<p class="text-lg text-secondary">The invisible brain powering your service operations. Not just a bot, but a dedicated digital manager.</p>
+</div>
+<div class="grid gap-8">
+<div class="flex gap-6 items-start">
+<div class="bg-surface-container-high p-4 rounded-2xl">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<h3 class="font-bold text-xl mb-1">24/7 Availability</h3>
+<p class="text-secondary text-sm leading-relaxed">Your business never sleeps. AI handles bookings and inquiries at any hour, instantly.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-surface-container-high p-4 rounded-2xl">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<div>
+<h3 class="font-bold text-xl mb-1">Seamless Management</h3>
+<p class="text-secondary text-sm leading-relaxed">Automatic resource allocation and queue management integrated into your existing workflow.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-8 rounded-3xl ambient-shadow">
+<span class="material-symbols-outlined text-tertiary-container text-4xl mb-4">analytics</span>
+<div class="font-bold">Real-time Data</div>
+</div>
+<div class="bg-primary text-white p-8 rounded-3xl ambient-shadow">
+<span class="material-symbols-outlined text-4xl mb-4">bolt</span>
+<div class="font-bold">Instant Scaling</div>
+</div>
+</div>
+<div class="space-y-4 pt-12">
+<div class="bg-surface-container-high p-8 rounded-3xl">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">settings_suggest</span>
+<div class="font-bold">Auto-Optimize</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl ambient-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">smart_toy</span>
+<div class="font-bold">Self Learning</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secure AI Agentic Layer -->
+<section class="bg-inverse-surface py-24 px-8 text-white overflow-hidden relative" id="security">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="abstract technological background with glowing neural network nodes and data pathways on a dark blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjZNiN675wjXL6DgqGdyep5g6HpI8BzWEc72ucnbQZj4O64xzB2uselQPOxaYhuubsb1y45CPLed8VvCGx3nmKBW3F5KlCm2cal7dOlAQHyJGjXulw1Hhtva5NGTVBBPlVVQXpYdbEt5DEQ5PVfLsh34azAq42pmN3-lnuhrrnOnxxSRHIpLXUhxWgN5cgi5NqcnzpJXGe9E_Y8RJnR-l1jW-ycZrmRCAdnL5yyLlKdlXEYU5UzLh1re4bzeD-PGPlKoFZyUnkM1I"/>
+</div>
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 relative z-10">
+<div class="space-y-8">
+<h2 class="text-4xl font-extrabold tracking-tight">Secure AI Agentic Layer</h2>
+<p class="text-slate-400 text-lg">We prioritize your data like it's our own. Every interaction is encrypted, and every decision is audited.</p>
+<ul class="space-y-6">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-medium">End-to-end data encryption</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-medium">Privacy-first AI modeling</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-medium">24/7 Security monitoring</span>
+</li>
+</ul>
+</div>
+<div class="bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-white/10">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-4xl text-primary">lock</span>
+</div>
+<h3 class="text-2xl font-bold">Military-Grade Reliability</h3>
+<p class="text-slate-400">Our infrastructure is designed for 99.99% uptime, ensuring your customers can always book, regardless of traffic spikes.</p>
+<div class="flex gap-4">
+<div class="px-4 py-2 bg-white/10 rounded-lg text-xs font-mono">AES-256</div>
+<div class="px-4 py-2 bg-white/10 rounded-lg text-xs font-mono">ISO 27001</div>
+<div class="px-4 py-2 bg-white/10 rounded-lg text-xs font-mono">SOC2</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Compliance Section -->
+<section class="py-24 px-8 max-w-7xl mx-auto" id="compliance">
+<div class="bg-surface-container-lowest p-12 rounded-[2rem] ambient-shadow border-l-8 border-tertiary-container flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-4">
+<div class="inline-block px-3 py-1 bg-tertiary-container/10 text-tertiary-container text-xs font-bold uppercase tracking-widest rounded">Regional Focus</div>
+<h2 class="text-3xl font-extrabold">Fully Compliant in Vietnam</h2>
+<p class="text-secondary leading-relaxed">MobiClear is built with local regulations at its core. Our operations align strictly with Vietnamese privacy laws and digital commerce mandates, ensuring peace of mind for local business owners.</p>
+</div>
+<div class="flex-shrink-0 bg-surface-container-low p-8 rounded-2xl flex items-center justify-center">
+<img class="w-24 h-24 object-cover rounded-full grayscale opacity-50" data-alt="official looking document with a gold wax seal on a clean white desk representing compliance and legal certification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSTj-ZcO4n7Zk_PC-XBflA-tadHD8EKyXnP7Vuc7c8734NKTiMyfbU0QbDbEaAZ66-A7NnR9LCecTJ6L42gAYZT_8JzE6KOYsR8dGBXYxiT5yMRHrvuZMVu4Tkl9QaqoASeC8XJIZ2ZZbxRaQYBKBTmXpUV2VNfT6mu_7tWO5FdYPJY1qnCQWFiNQYMkXMdJjPitsUVjvmMi9WEXj-RnyLqgYDGVp01GbR4Co9AgeS68nmGJQYtzmf6WIXdOoOb9BU3xedrdA-AU"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200/15 w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4 font-['Inter'] text-sm">
+<div class="text-lg font-bold text-slate-900">MobiClear</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Contact</a>
+</div>
+<div class="text-slate-500">© 2024 MobiClear AI. All rights reserved.</div>
+</div>
+</footer>
+</body></html>
