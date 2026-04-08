@@ -12,33 +12,39 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     id: 'platforms',
-    question: 'What messaging platforms does MobiClear support?',
+    question: 'What if my customers only use Zalo? Will MobiClear work?',
     answer:
-      'Currently, MobiClear integrates with Telegram, Zalo, and Viber. We\'re expanding to Facebook Messenger and WhatsApp in Q2 2026.',
+      'Absolutely. MobiClear works with any messaging platform your customers already use—Zalo, Telegram, Viber, or all three at once. No app downloads, no new accounts. One car wash partner in District 7 saw 40% more bookings just by enabling Zalo integration. We\'re adding WhatsApp and Facebook Messenger in Q2 2026.',
   },
   {
     id: 'conflicts',
-    question: 'How does the AI handle booking conflicts?',
+    question: 'How does the AI handle double-bookings and scheduling conflicts?',
     answer:
-      'Our AI agent automatically detects scheduling conflicts, suggests alternative time slots, and can re-optimize the entire day\'s schedule in real-time.',
+      'The AI detects conflicts in real-time before they happen. When two customers request the same slot, the AI instantly offers the second customer the next available time—no waiting, no back-and-forth. One partner told us: "We used to lose 5-10 bookings a week to conflicts. Now it\'s zero." The AI can also re-optimize an entire day\'s schedule if a cancellation opens up a better arrangement.',
   },
   {
     id: 'security',
     question: 'Is my customer data safe?',
     answer:
-      'Absolutely. All data is encrypted end-to-end with AES-256. We\'re SOC 2 Type II compliant and all data stays within Vietnamese data centers.',
+      'Every piece of data is encrypted end-to-end with AES-256—the same standard banks use. We\'re SOC 2 Type II certified (independently audited), and all data stays in Vietnamese data centers. We never sell or share customer data. Your customers\' phone numbers, booking history, and personal info are locked down tight.',
   },
   {
     id: 'setup',
-    question: 'How long does setup take?',
+    question: 'How long does setup actually take?',
     answer:
-      'Most businesses are up and running within 24 hours. Our onboarding team handles the integration with your existing systems.',
+      'Most car washes are live within 24 hours. Here\'s the typical timeline: Day 1 morning—we connect your booking system (takes about 2 hours with our team). Day 1 afternoon—your first customers start booking through chat. That\'s it. Our fastest setup was 4 hours from demo call to handling live bookings. No custom code, no months of waiting.',
   },
   {
     id: 'free',
-    question: 'Can I try MobiClear for free?',
+    question: 'Can I try MobiClear before committing?',
     answer:
-      'Yes! Our Starter plan is completely free for up to 100 bookings per month. No credit card required.',
+      'Yes—our Starter plan is completely free for up to 100 bookings per month, forever. No credit card required, no time limit. Most partners start free, see results within the first week, and upgrade to Pro when they hit the booking limit. There\'s zero risk to trying it.',
+  },
+  {
+    id: 'multi-location',
+    question: 'Can I manage multiple car wash locations from one account?',
+    answer:
+      'Yes, on our Pro and Enterprise plans. Each location gets its own AI agent and booking calendar, but you see everything in one centralized dashboard. Real-time analytics across all locations, unified customer database, and the AI learns patterns across your entire network to optimize scheduling.',
   },
 ];
 
@@ -58,10 +64,10 @@ export default function FAQSection() {
         {/* Heading */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-extrabold font-headline text-on-surface tracking-tight">
-            Frequently Asked Questions
+            Questions From Our Community
           </h2>
           <p className="text-lg text-on-surface-variant">
-            Everything you need to know about MobiClear
+            Real questions from car wash operators like you
           </p>
         </div>
 
@@ -72,7 +78,6 @@ export default function FAQSection() {
               key={faq.id}
               className="bg-surface-container-lowest rounded-2xl overflow-hidden transition-all duration-300"
             >
-              {/* Question - Always Visible */}
               <button
                 onClick={() => toggleOpen(faq.id)}
                 className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between hover:bg-surface-container-low transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
@@ -90,9 +95,8 @@ export default function FAQSection() {
                 </div>
               </button>
 
-              {/* Answer - Collapsible */}
               {openId === faq.id && (
-                <div className="px-6 md:px-8 pb-6 md:pb-8 pt-2 border-t border-surface-container animate-in fade-in duration-200">
+                <div className="px-6 md:px-8 pb-6 md:pb-8 pt-2">
                   <p className="text-base text-on-surface-variant leading-relaxed">
                     {faq.answer}
                   </p>
@@ -103,16 +107,17 @@ export default function FAQSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center pt-8">
-          <p className="text-on-surface-variant text-base">
-            Still have questions?{' '}
-            <a
-              href="mailto:support@mobiclear.com"
-              className="font-bold text-primary hover:underline transition-colors"
-            >
-              Contact our team
-            </a>
+        <div className="text-center pt-4">
+          <p className="text-on-surface-variant text-base mb-3">
+            Can&apos;t find what you&apos;re looking for?
           </p>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 font-bold text-primary hover:underline transition-colors"
+          >
+            <span className="material-symbols-outlined text-lg">chat</span>
+            Chat with our team
+          </a>
         </div>
       </div>
     </section>

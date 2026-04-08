@@ -35,6 +35,14 @@ export default function SocialProofSection() {
       company: 'AutoCare Vietnam',
       rating: 5,
     },
+    {
+      quote:
+        'We went from losing 10 bookings a week to zero missed slots. The AI even fills cancellation gaps automatically. Best investment this year.',
+      author: 'Le Hoang Duc',
+      title: 'Operations Manager',
+      company: 'CleanMaster Chain',
+      rating: 5,
+    },
   ];
 
   const getInitials = (name: string) => {
@@ -67,7 +75,7 @@ export default function SocialProofSection() {
         </div>
 
         {/* Testimonials Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.author}

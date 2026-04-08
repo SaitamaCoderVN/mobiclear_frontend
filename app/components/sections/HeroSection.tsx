@@ -35,8 +35,8 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-base md:text-lg text-on-surface-variant leading-snug max-w-xl">
-          MobiClear automates your car wash scheduling through AI. Seamlessly
-          book via your favorite chat apps without lifting a finger.
+          Your car wash&apos;s AI manager that handles 100% of booking chaos.
+          Instant confirmations, zero double-bookings, and customers who book 3x faster.
         </p>
 
         {/* CTAs */}

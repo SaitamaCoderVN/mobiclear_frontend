@@ -75,12 +75,22 @@ export default function SecuritySection() {
             ))}
           </div>
 
-          {/* Compliance Note */}
-          <div className="pt-4 border-t border-white/10">
-            <p className="text-xs text-inverse-on-surface/70">
-              Independently audited. SOC 2 Type II compliant.
-            </p>
+          {/* Compliance Badges */}
+          <div className="flex flex-wrap gap-3 justify-center pt-2">
+            <div className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-inverse-on-surface/80 flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-sm text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+              GDPR Compliant
+            </div>
+            <div className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-inverse-on-surface/80 flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-sm text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
+              Vietnam Data Residency
+            </div>
           </div>
+
+          {/* Compliance Note */}
+          <p className="text-xs text-inverse-on-surface/60 pt-2">
+            Independently audited. SOC 2 Type II compliant.
+          </p>
         </div>
       </div>
     </section>
