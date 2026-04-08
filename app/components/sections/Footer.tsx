@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-surface-container-low w-full py-12 px-6 md:px-8">
+    <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Email Signup Section */}
         <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-12">
@@ -28,10 +28,10 @@ export default function Footer() {
             {/* Left - Text */}
             <div className="space-y-3">
               <h3 className="text-2xl md:text-3xl font-bold text-on-surface font-headline">
-                Stay Updated
+                Join the Automation Movement
               </h3>
               <p className="text-on-surface-variant text-base">
-                Get early access and product updates.
+                Weekly tips, product updates, and car wash industry insights.
               </p>
             </div>
 

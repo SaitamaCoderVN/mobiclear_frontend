@@ -24,22 +24,33 @@ export default function ComplianceSection() {
 
   return (
     <section
-      className="bg-surface-container-low py-6 px-6 md:px-8 overflow-hidden"
+      className="bg-surface-container-lowest py-12 md:py-16 px-6 md:px-8 overflow-hidden"
       id="compliance"
     >
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 flex-wrap">
-        {badges.map((badge) => (
-          <div key={badge.label} className="inline-flex items-center gap-2">
-            <MaterialIcon
-              name={badge.icon}
-              size="md"
-              className="text-on-surface-variant"
-            />
-            <span className="text-sm text-on-surface-variant font-medium">
-              {badge.label}
-            </span>
-          </div>
-        ))}
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <div className="text-center mb-8">
+          <h3 className="text-sm font-bold uppercase tracking-widest text-on-surface-variant">
+            Built for Trust & Compliance
+          </h3>
+        </div>
+
+        {/* Badges Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {badges.map((badge) => (
+            <div
+              key={badge.label}
+              className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container hover:scale-105 transition-all duration-300"
+            >
+              <span className="material-symbols-outlined text-2xl text-primary">
+                {badge.icon}
+              </span>
+              <span className="text-sm font-semibold text-on-surface text-center leading-tight">
+                {badge.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

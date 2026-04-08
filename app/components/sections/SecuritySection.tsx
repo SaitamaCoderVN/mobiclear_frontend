@@ -29,10 +29,10 @@ export default function SecuritySection() {
         {/* Left Column - Security Features */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Enterprise-Grade Infrastructure
+            Bank-Level Security. Always Online.
           </h2>
           <p className="text-inverse-on-surface/80 text-base md:text-lg leading-relaxed">
-            Every booking request is encrypted end-to-end. Our infrastructure runs on enterprise-grade cloud with redundant failover across multiple availability zones.
+            Every booking is encrypted end-to-end with enterprise-grade infrastructure and redundant failover across availability zones.
           </p>
 
           {/* Security Features List */}

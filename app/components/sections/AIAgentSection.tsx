@@ -5,43 +5,42 @@ export default function AIAgentSection() {
     {
       icon: 'schedule',
       title: 'Always On',
-      description: 'Handles 1,000+ concurrent booking requests across Telegram, Zalo, and Viber simultaneously.',
+      description: '1,000+ concurrent chats handled. Zero downtime.',
     },
     {
       icon: 'hub',
       title: 'Zero-Touch Operations',
-      description: 'Automatic queue optimization, resource allocation, and conflict resolution—no human intervention needed.',
+      description: 'Automatic scheduling, conflict resolution, no human needed.',
     },
   ];
 
   const bentoCards = [
     {
+      icon: 'smart_toy',
+      title: 'Real-time Learning',
+      subtitle: 'Gets smarter with every interaction',
+      colSpan: true,
+      bgColor: 'bg-primary',
+      textColor: 'text-on-primary',
+      subtitleColor: 'text-on-primary/90',
+    },
+    {
       icon: 'analytics',
-      title: 'Real-time Data',
-      subtitle: 'Live dashboard with booking analytics',
-      colorClass: 'bg-surface-container-lowest',
-      iconColor: 'text-tertiary-container',
+      title: 'Analytics Dashboard',
+      subtitle: 'Live booking insights and performance metrics',
+      colSpan: false,
+      bgColor: 'bg-surface-container-lowest',
+      textColor: 'text-on-surface',
+      subtitleColor: 'text-on-surface-variant',
     },
     {
       icon: 'bolt',
-      title: 'Instant Scaling',
-      subtitle: 'Auto-scales to meet demand spikes',
-      colorClass: 'bg-primary text-on-primary',
-      iconColor: 'text-on-primary',
-    },
-    {
-      icon: 'settings_suggest',
-      title: 'Auto-Optimize',
-      subtitle: 'AI learns and improves continuously',
-      colorClass: 'bg-surface-container-high',
-      iconColor: 'text-on-surface-variant',
-    },
-    {
-      icon: 'smart_toy',
-      title: 'Self Learning',
-      subtitle: 'Gets smarter with every interaction',
-      colorClass: 'bg-surface-container-lowest',
-      iconColor: 'text-primary',
+      title: 'Auto-Scale',
+      subtitle: 'Automatically handles traffic spikes',
+      colSpan: false,
+      bgColor: 'bg-surface-container-lowest',
+      textColor: 'text-on-surface',
+      subtitleColor: 'text-on-surface-variant',
     },
   ];
 
@@ -75,47 +74,42 @@ export default function AIAgentSection() {
           </div>
         </div>
 
-        {/* Right Column - Bento Grid */}
+        {/* Right Column - Restructured Bento Grid */}
         <div className="grid grid-cols-2 gap-4">
-          {/* First Column */}
-          <div className="space-y-4">
-            {bentoCards.slice(0, 2).map((card) => (
-              <div
-                key={card.title}
-                className={`${card.colorClass} p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02]`}
-              >
-                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
-                  {card.icon}
-                </span>
-                <div className={`font-bold font-headline mb-2 ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
-                  {card.title}
-                </div>
-                <div className={`text-xs leading-relaxed ${card.colorClass.includes('text-on-primary') ? 'text-on-primary/90' : 'text-on-surface-variant'}`}>
-                  {card.subtitle}
-                </div>
+          {/* Hero Card - Real-time Learning (spans both columns) */}
+          <div className="col-span-2">
+            <div className="bg-primary text-on-primary p-8 md:p-10 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02] flex items-center justify-between gap-6">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold font-headline mb-2">
+                  {bentoCards[0].title}
+                </h3>
+                <p className="text-sm md:text-base text-on-primary/90">
+                  {bentoCards[0].subtitle}
+                </p>
               </div>
-            ))}
+              <span className="material-symbols-outlined text-5xl flex-shrink-0">
+                {bentoCards[0].icon}
+              </span>
+            </div>
           </div>
 
-          {/* Second Column (offset) */}
-          <div className="space-y-4 pt-12">
-            {bentoCards.slice(2, 4).map((card) => (
-              <div
-                key={card.title}
-                className={`${card.colorClass} p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02]`}
-              >
-                <span className={`material-symbols-outlined ${card.iconColor} text-4xl mb-6 block`}>
-                  {card.icon}
-                </span>
-                <div className={`font-bold font-headline mb-2 ${card.colorClass.includes('text-on-primary') ? 'text-on-primary' : 'text-on-surface'}`}>
-                  {card.title}
-                </div>
-                <div className={`text-xs leading-relaxed ${card.colorClass.includes('text-on-primary') ? 'text-on-primary/90' : 'text-on-surface-variant'}`}>
-                  {card.subtitle}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Two Cards Below */}
+          {bentoCards.slice(1, 3).map((card) => (
+            <div
+              key={card.title}
+              className={`${card.bgColor} p-6 md:p-8 rounded-3xl ambient-shadow transition-all duration-300 hover:scale-[1.02]`}
+            >
+              <span className={`material-symbols-outlined ${card.textColor} text-4xl mb-4 block`}>
+                {card.icon}
+              </span>
+              <h4 className={`font-bold font-headline mb-2 text-lg ${card.textColor}`}>
+                {card.title}
+              </h4>
+              <p className={`text-sm leading-relaxed ${card.subtitleColor}`}>
+                {card.subtitle}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

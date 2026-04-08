@@ -5,16 +5,16 @@ import { MaterialIcon } from '../ui/MaterialIcon';
 export default function SocialProofSection() {
   const metrics = [
     {
-      value: '500+',
-      label: 'Bookings Automated Monthly',
+      value: '70%',
+      label: 'Average time saved on bookings',
     },
     {
       value: '50+',
-      label: 'Car Wash Partners',
+      label: 'Car wash partners across Vietnam',
     },
     {
-      value: '98%',
-      label: 'Customer Satisfaction',
+      value: '4.9/5',
+      label: 'Average customer rating',
     },
   ];
 
@@ -36,6 +36,15 @@ export default function SocialProofSection() {
       rating: 5,
     },
   ];
+
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map((word) => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 1);
+  };
 
   return (
     <section
@@ -64,32 +73,47 @@ export default function SocialProofSection() {
               key={testimonial.author}
               className="bg-surface-container-lowest rounded-3xl ambient-shadow p-8 md:p-10 space-y-6 flex flex-col"
             >
-              {/* Stars */}
-              <div className="flex gap-1">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <MaterialIcon
-                    key={i}
-                    name="star"
-                    filled={true}
-                    size="md"
-                    className="text-amber-400"
-                  />
-                ))}
+              {/* Stars & Verified Badge */}
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <MaterialIcon
+                      key={i}
+                      name="star"
+                      filled={true}
+                      size="md"
+                      className="text-amber-400"
+                    />
+                  ))}
+                </div>
+                <span className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">
+                  Verified review
+                </span>
+              </div>
+
+              {/* Opening Quote Mark */}
+              <div className="text-4xl text-primary/20 leading-none">
+                "
               </div>
 
               {/* Quote */}
-              <p className="text-lg italic text-on-surface leading-relaxed flex-grow">
-                "{testimonial.quote}"
+              <p className="text-lg text-on-surface leading-relaxed flex-grow">
+                {testimonial.quote}
               </p>
 
               {/* Author Info */}
-              <div className="pt-4 border-t border-surface-container">
-                <p className="font-bold text-base text-on-surface">
-                  {testimonial.author}
-                </p>
-                <p className="text-sm text-on-surface-variant">
-                  {testimonial.title}, {testimonial.company}
-                </p>
+              <div className="pt-4 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">
+                  {getInitials(testimonial.author)}
+                </div>
+                <div>
+                  <p className="font-bold text-base text-on-surface">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-on-surface-variant">
+                    {testimonial.title}, {testimonial.company}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

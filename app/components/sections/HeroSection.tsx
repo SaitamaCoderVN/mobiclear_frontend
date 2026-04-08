@@ -30,11 +30,11 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-on-surface leading-[1.1] font-headline"
           style={{ letterSpacing: '-0.03em' }}
         >
-          The Intelligent <span className="text-primary">Flow</span> of Car Care.
+          Stop Losing Bookings. Let <span className="text-primary">AI</span> Handle It.
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl">
+        <p className="text-base md:text-lg text-on-surface-variant leading-snug max-w-xl">
           MobiClear automates your car wash scheduling through AI. Seamlessly
           book via your favorite chat apps without lifting a finger.
         </p>

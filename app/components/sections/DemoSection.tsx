@@ -6,19 +6,19 @@ export default function HowItWorksSection() {
       number: '01',
       title: 'Chat with AI',
       icon: 'chat',
-      description: 'Send a message on Telegram or Zalo. Our AI understands natural language booking requests.',
+      description: 'Send a message on Telegram or Zalo and the AI understands your booking request instantly.',
     },
     {
       number: '02',
       title: 'AI Processes & Optimizes',
       icon: 'psychology',
-      description: 'The AI agent finds the optimal time slot, checks availability, and handles scheduling conflicts.',
+      description: 'The AI finds optimal time slots, checks availability, and resolves conflicts automatically.',
     },
     {
       number: '03',
       title: 'Booking Confirmed',
       icon: 'check_circle',
-      description: 'Instant confirmation with all details. Reminders sent automatically before your appointment.',
+      description: 'Get instant confirmation with details and automatic reminders before your appointment.',
     },
   ];
 
@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
                 </div>
 
                 {/* Content Card */}
-                <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 space-y-3 flex-1">
+                <div className="bg-surface-container-lowest rounded-2xl p-8 md:p-10 space-y-3 flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-on-surface font-headline">
                     {step.title}
                   </h3>
