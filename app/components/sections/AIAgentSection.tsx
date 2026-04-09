@@ -116,11 +116,11 @@ export default function AIAgentSection() {
       {/* Micro-CTA */}
       <div className="text-center pt-16">
         <a
-          href="#pricing-cta"
+          href="#contact"
           className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline transition-colors"
         >
           <span className="material-symbols-outlined text-base">arrow_forward</span>
-          See plans &amp; start your free trial
+          Try the AI Manager on Telegram or Zalo
         </a>
       </div>
     </section>

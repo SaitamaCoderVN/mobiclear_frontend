@@ -50,7 +50,7 @@ const faqs: FAQItem[] = [
     id: 'worth-it',
     question: 'Is MobiClear worth it for a small car wash?',
     answer:
-      'The Starter plan is free forever—up to 100 bookings/month with no strings attached. Most small operators recover the Pro plan cost ($99/month) within 2-3 weeks through fewer missed bookings and higher slot utilization. One District 2 partner told us they added 35 extra bookings in the first month just from AI-filled cancellation gaps. Zero risk to try.',
+      'You can try MobiClear for free right now—just message our AI bot on Telegram or Zalo. One District 2 partner told us they added 35 extra bookings in the first month just from AI-filled cancellation gaps. Most small operators see results within the first week.',
   },
 ];
 

@@ -82,11 +82,11 @@ export default function HowItWorksSection() {
         {/* Micro-CTA */}
         <div className="text-center pt-12">
           <a
-            href="#pricing-cta"
+            href="#contact"
             className="inline-flex items-center gap-2 signature-gradient text-on-primary px-8 py-3.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
           >
-            <span className="material-symbols-outlined text-base">rocket_launch</span>
-            Try It Free — See Results This Week
+            <span className="material-symbols-outlined text-base">send</span>
+            Try It Now on Telegram or Zalo
           </a>
         </div>
       </div>

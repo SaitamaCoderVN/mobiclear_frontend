@@ -1,16 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
-const SceneWrapper = dynamic(
-  () => import('../3d/SceneWrapper').then((mod) => ({ default: mod.SceneWrapper })),
-  { ssr: false }
-);
-const HeroScene = dynamic(
-  () => import('../3d/HeroScene').then((mod) => ({ default: mod.HeroScene })),
-  { ssr: false }
-);
-
 export default function HeroSection() {
   return (
     <section
@@ -38,15 +27,23 @@ export default function HeroSection() {
           Your car wash&apos;s AI manager that fills every slot, confirms every booking in under 10 seconds, and never double-books again.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#pricing-cta" className="signature-gradient text-on-primary flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95">
-            <span className="material-symbols-outlined">rocket_launch</span>
-            Start Free — Live in 24 Hours
+        {/* CTAs - Telegram & Zalo */}
+        <div className="flex flex-wrap gap-4 pt-4">
+          <a
+            href="https://t.me/mobiclear_bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="signature-gradient text-on-primary flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
+          >
+            <span className="material-symbols-outlined">send</span>
+            Book on Telegram
           </a>
-          <a href="#demo" className="bg-surface-container-high text-on-surface flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95">
-            <span className="material-symbols-outlined">play_arrow</span>
-            See How It Works
+          <a
+            href="#contact"
+            className="bg-surface-container-high text-on-surface flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95"
+          >
+            <span className="material-symbols-outlined">chat</span>
+            Book on Zalo
           </a>
         </div>
 
@@ -61,14 +58,26 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Right Column - 3D Hero Scene */}
+      {/* Right Column - Hero Image like stitch */}
       <div className="flex-1 w-full relative">
-        {/* 3D Scene Background */}
-        <div className="aspect-[4/3] rounded-3xl overflow-hidden ambient-shadow bg-gradient-to-br from-surface-container-low to-surface-container relative">
-          <div className="absolute inset-0">
-            <SceneWrapper transparentBg={false}>
-              <HeroScene />
-            </SceneWrapper>
+        {/* Car Wash Image */}
+        <div className="aspect-[4/3] rounded-3xl overflow-hidden ambient-shadow bg-surface-container-low" style={{ border: '8px solid rgba(255,255,255,0.5)' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAppqsCgb8c0Cgy2xu23zhrglO58_hbOkZPioyNNK6nv2e9TwKPzix8SSTQXBAGayPAilgNjNoh6tKB9ksLYQWrQaxDQ5rWAe4orYFWvMT8Q9Vm4qp6KSJYAq1PonTvDWvs4juL0WmLph9vFVnZfHZjz6RQyRwEB9Vuur0C8l1zBRoGv265Xzdo6OECD-cvk8X6XIHWuny39GFfIzLSH7aHeaDBA6GcSS7BGi6in4eaLz1kHa_7ZLHd--ze5-pR-pqqBWC3IUlLRA"
+            alt="Luxury car being detailed inside a bright high-tech car wash bay with soft blue lighting and water droplets"
+          />
+        </div>
+
+        {/* Floating Booking Confirmed Card */}
+        <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest p-5 md:p-6 rounded-2xl ambient-shadow flex items-center gap-4 max-w-xs" style={{ borderLeft: '4px solid var(--color-primary)' }}>
+          <div className="bg-tertiary-container text-on-tertiary-container p-3 rounded-full flex-shrink-0">
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+          </div>
+          <div>
+            <div className="font-bold text-sm text-on-surface">Booking Confirmed</div>
+            <div className="text-xs text-on-surface-variant">AI Agent scheduled your wash for 2:00 PM</div>
           </div>
         </div>
       </div>

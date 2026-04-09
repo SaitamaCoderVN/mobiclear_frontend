@@ -8,7 +8,7 @@ export default function Navbar() {
   const navItems = [
     { label: 'How It Works', href: '#demo' },
     { label: 'Features', href: '#ai-agent' },
-    { label: 'Pricing', href: '#pricing-cta' },
+    { label: 'Try Now', href: '#contact' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -39,10 +39,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#pricing-cta"
+            href="#contact"
             className="signature-gradient text-on-primary px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
           >
-            Start Free
+            Try Now
           </a>
         </div>
 
@@ -72,11 +72,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#pricing-cta"
+            href="#contact"
             onClick={() => setMobileOpen(false)}
             className="block w-full text-center signature-gradient text-on-primary px-6 py-3 rounded-xl font-bold text-sm tracking-wide uppercase mt-2"
           >
-            Start Free
+            Try Now
           </a>
         </div>
       )}
