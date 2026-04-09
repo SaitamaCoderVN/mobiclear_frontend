@@ -27,7 +27,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo_mobiclear.jpg" alt="MobiClear" className="h-8 md:h-10 w-auto" />
+          <img src="/logo_mobiclear.png" alt="MobiClear" className="h-8 md:h-10 w-auto" />
         </a>
 
         {/* Desktop Nav Links */}

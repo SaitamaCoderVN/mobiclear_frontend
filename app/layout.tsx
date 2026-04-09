@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth h-full antialiased">
       <head>
+        <link rel="icon" href="/logo_mobiclear.png" type="image/png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
           rel="stylesheet"
