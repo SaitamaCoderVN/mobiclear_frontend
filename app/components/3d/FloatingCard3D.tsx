@@ -122,8 +122,6 @@ export function FloatingCard3D({
           color="#0051c9"
           transparent
           opacity={0.1}
-          emissive="#0051c9"
-          emissiveIntensity={0.3}
           side={THREE.BackSide}
         />
       </mesh>
