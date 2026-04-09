@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-surface-container-low w-full py-16 md:py-20 px-6 md:px-8">
+    <footer className="bg-surface-container-low w-full py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Email Signup Section */}
         <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-12">
@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
 
             {/* Right - Form */}
-            <form onSubmit={handleSubscribe} className="flex gap-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"

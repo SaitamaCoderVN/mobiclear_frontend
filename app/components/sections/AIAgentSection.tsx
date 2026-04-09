@@ -45,12 +45,12 @@ export default function AIAgentSection() {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 md:px-8 max-w-7xl mx-auto" id="ai-agent">
-      <div className="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
+    <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto" id="ai-agent">
+      <div className="grid md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-start">
         {/* Left Column - Features */}
         <div className="space-y-12">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">
               Your AI Manager That Never Sleeps
             </h2>
             <p className="text-base md:text-lg text-on-surface-variant leading-relaxed">

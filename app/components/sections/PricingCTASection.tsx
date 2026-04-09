@@ -3,16 +3,16 @@
 export default function PricingCTASection() {
   return (
     <section
-      className="bg-gradient-to-b from-surface-container-low to-surface py-24 md:py-32 px-6 md:px-8 overflow-hidden"
+      className="bg-gradient-to-b from-surface-container-low to-surface py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 overflow-hidden"
       id="contact"
     >
-      <div className="max-w-3xl mx-auto text-center space-y-10">
+      <div className="max-w-3xl mx-auto text-center space-y-8 sm:space-y-10">
         {/* Heading */}
-        <div className="space-y-5">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline text-on-surface tracking-tight">
+        <div className="space-y-4 sm:space-y-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline text-on-surface tracking-tight">
             Try Your AI Manager — Free
           </h2>
-          <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
             Chat with our AI bot right now. See how it handles bookings in under 10 seconds. No signup, no forms—just message us.
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function PricingCTASection() {
             href="https://t.me/mobiclear_bot"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-3xl p-8 md:p-10 flex flex-col items-center gap-5 bg-surface-container-lowest ambient-shadow transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+            className="group relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-5 bg-surface-container-lowest ambient-shadow transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
           >
             {/* Telegram Icon */}
             <div className="w-20 h-20 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 overflow-hidden">
@@ -45,7 +45,7 @@ export default function PricingCTASection() {
             href="https://zalo.me/1902829874729738998"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-3xl p-8 md:p-10 flex flex-col items-center gap-5 bg-surface-container-lowest ambient-shadow transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+            className="group relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col items-center gap-4 sm:gap-5 bg-surface-container-lowest ambient-shadow transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
           >
             {/* Zalo Icon */}
             <div className="w-20 h-20 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 overflow-hidden">

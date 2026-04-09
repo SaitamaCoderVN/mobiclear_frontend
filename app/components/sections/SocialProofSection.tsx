@@ -3,7 +3,7 @@
 export default function SocialProofSection() {
   return (
     <section
-      className="bg-surface pt-8 md:pt-12 pb-24 md:pb-32 px-6 md:px-8 overflow-hidden"
+      className="bg-surface pt-6 sm:pt-8 md:pt-12 pb-16 md:pb-24 lg:pb-32 px-4 sm:px-6 md:px-8 overflow-hidden"
       id="social-proof"
     >
       <div className="max-w-7xl mx-auto">
@@ -20,7 +20,7 @@ export default function SocialProofSection() {
 
           {/* YouTube Embed */}
           <div className="max-w-4xl mx-auto">
-            <div className="relative w-full rounded-3xl overflow-hidden ambient-shadow" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative w-full rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden ambient-shadow" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/PGwdlXLnugY"

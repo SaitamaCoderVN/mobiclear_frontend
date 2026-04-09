@@ -3,20 +3,20 @@
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden px-6 md:px-8 py-24 md:py-32 pt-24 md:pt-28 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16"
+      className="relative overflow-hidden px-4 sm:px-6 md:px-8 py-16 md:py-24 lg:py-32 pt-20 sm:pt-24 md:pt-28 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16"
       id="hero"
     >
       {/* Left Column */}
-      <div className="flex-1 space-y-10 relative z-10">
+      <div className="flex-1 space-y-6 sm:space-y-8 md:space-y-10 relative z-10">
         {/* Badge */}
-        <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-semibold">
+        <div className="inline-flex items-center px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-tertiary-container text-on-tertiary-container text-xs sm:text-sm font-semibold">
           <span className="material-symbols-outlined mr-2 text-base">auto_awesome</span>
           Built for Vietnam&apos;s Car Wash Industry
         </div>
 
         {/* Headline */}
         <h1
-          className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-on-surface leading-[1.1] font-headline"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-on-surface leading-[1.1] font-headline"
           style={{ letterSpacing: '-0.03em' }}
         >
           Your <span className="text-primary">AI Manager</span> That Fills Every Slot.
@@ -33,7 +33,7 @@ export default function HeroSection() {
             href="https://t.me/mobiclear_bot"
             target="_blank"
             rel="noopener noreferrer"
-            className="signature-gradient text-on-primary flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
+            className="signature-gradient text-on-primary flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/Telegram_logo.svg" alt="Telegram" className="w-6 h-6" />
@@ -43,7 +43,7 @@ export default function HeroSection() {
             href="https://zalo.me/1902829874729738998"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-surface-container-high text-on-surface flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95"
+            className="bg-surface-container-high text-on-surface flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/Icon_of_Zalo.svg" alt="Zalo" className="w-6 h-6" />
@@ -75,7 +75,7 @@ export default function HeroSection() {
         </div>
 
         {/* Floating Booking Confirmed Card */}
-        <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest p-5 md:p-6 rounded-2xl ambient-shadow flex items-center gap-4 max-w-xs" style={{ borderLeft: '4px solid var(--color-primary)' }}>
+        <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-surface-container-lowest p-3 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl ambient-shadow flex items-center gap-3 sm:gap-4 max-w-[220px] sm:max-w-xs" style={{ borderLeft: '4px solid var(--color-primary)' }}>
           <div className="bg-tertiary-container text-on-tertiary-container p-3 rounded-full flex-shrink-0">
             <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
           </div>

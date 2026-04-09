@@ -23,7 +23,7 @@ export default function Navbar() {
         WebkitBackdropFilter: 'blur(20px)',
       }}
     >
-      <div className="flex justify-between items-center px-6 md:px-8 py-3 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-3 max-w-7xl mx-auto">
         {/* Logo */}
         <a href="#hero" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-4 space-y-2" style={{ background: 'rgba(255, 255, 255, 0.95)' }}>
+        <div className="md:hidden px-4 sm:px-6 pb-4 space-y-1" style={{ background: 'rgba(255, 255, 255, 0.95)' }}>
           {navItems.map((item) => (
             <a
               key={item.label}
