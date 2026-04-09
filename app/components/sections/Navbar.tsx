@@ -6,8 +6,10 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
+    { label: 'Demo', href: '#social-proof' },
     { label: 'How It Works', href: '#demo' },
     { label: 'Features', href: '#ai-agent' },
+    { label: 'Tasco', href: '#tasco' },
     { label: 'Try Now', href: '#contact' },
     { label: 'FAQ', href: '#faq' },
   ];
@@ -23,8 +25,9 @@ export default function Navbar() {
     >
       <div className="flex justify-between items-center px-6 md:px-8 py-3 max-w-7xl mx-auto">
         {/* Logo */}
-        <a href="#hero" className="text-2xl font-black text-on-surface font-headline tracking-tight">
-          MobiClear
+        <a href="#hero" className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo_mobiclear.jpg" alt="MobiClear" className="h-8 md:h-10 w-auto" />
         </a>
 
         {/* Desktop Nav Links */}

@@ -3,6 +3,7 @@ import HeroSection from "./components/sections/HeroSection";
 import SocialProofSection from "./components/sections/SocialProofSection";
 import DemoSection from "./components/sections/DemoSection";
 import AIAgentSection from "./components/sections/AIAgentSection";
+import TascoLayerSection from "./components/sections/TascoLayerSection";
 import SecuritySection from "./components/sections/SecuritySection";
 import FAQSection from "./components/sections/FAQSection";
 import PricingCTASection from "./components/sections/PricingCTASection";
@@ -24,6 +25,7 @@ export default function Home() {
         <SocialProofSection />
         <DemoSection />
         <AIAgentSection />
+        <TascoLayerSection />
         <SecuritySection />
         <FAQSection />
         <PricingCTASection />

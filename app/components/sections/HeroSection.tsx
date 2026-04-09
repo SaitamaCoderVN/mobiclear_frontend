@@ -35,14 +35,18 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="signature-gradient text-on-primary flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
           >
-            <span className="material-symbols-outlined">send</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/Telegram_logo.svg" alt="Telegram" className="w-6 h-6" />
             Book on Telegram
           </a>
           <a
-            href="#contact"
+            href="https://zalo.me/1902829874729738998"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-surface-container-high text-on-surface flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base tracking-wide uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-95"
           >
-            <span className="material-symbols-outlined">chat</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/Icon_of_Zalo.svg" alt="Zalo" className="w-6 h-6" />
             Book on Zalo
           </a>
         </div>

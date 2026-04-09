@@ -59,7 +59,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 pt-8">
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <div className="text-lg font-bold text-on-surface font-headline">MobiClear</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo_mobiclear.jpg" alt="MobiClear" className="h-8 w-auto" />
 
             {/* Social Links */}
             <div className="flex gap-4">
