@@ -23,7 +23,7 @@ export default function SocialProofSection() {
             <div className="relative w-full rounded-3xl overflow-hidden ambient-shadow" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/6-jxuK4t0Y0"
+                src="https://www.youtube.com/embed/PGwdlXLnugY"
                 title="MobiClear Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
